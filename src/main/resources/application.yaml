@@ -1,0 +1,20 @@
+name: abc
+
+#object
+person:
+  name: ${name}
+  age:  20
+
+#object inline method
+person2:  {name: Ali, age: 20}
+
+#array
+address:
+  - beijing
+  - shanghai
+
+#array inline method
+address2:  [beijing, shanghai]
+
+msg1: 'hello \n world' #Not recognize \n as a newline
+msg2: "hello \n world" #Recognizes \n as a newline
