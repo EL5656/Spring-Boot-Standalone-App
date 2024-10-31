@@ -4,6 +4,9 @@ name: abc
 person:
   name: ${name}
   age:  20
+  address:
+    - beijing
+    - shanghai
 
 #object inline method
 person2:  {name: Ali, age: 20}
@@ -18,3 +21,5 @@ address2:  [beijing, shanghai]
 
 msg1: 'hello \n world' #Not recognize \n as a newline
 msg2: "hello \n world" #Recognizes \n as a newline
+server:
+  port: 8082

@@ -6,12 +6,15 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+
 @RestController
 public class HelloController {
     //Configuration
     //1 - Value
     //2 - Environment
-
+    //3 - Configuration Properties
+    //4 - PropertySource or PropertySources({})
     @Value("${name}")
     private String studentName;
 
@@ -29,6 +32,8 @@ public class HelloController {
 
     @Autowired
     private Environment env;
+    @Autowired
+    private Person person;
 
     @RequestMapping("/hello")
     public String hello(){
@@ -40,8 +45,12 @@ public class HelloController {
         System.out.println(msg2);
         System.out.println("---------------------");
         System.out.println(env.getProperty("person.name"));
+        System.out.println("---------------------");
+        System.out.println(person);
+        String [] address = person.getAddress();
+        for(int i=0;i< address.length;i++){
+            System.out.println(address[i]);
+        }
         return "hello";
     }
-
-
 }
